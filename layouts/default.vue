@@ -106,6 +106,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
           to: '/inspire'
+        },
+        {
+          icon: 'mdi-scanner',
+          title: 'Scanner',
+          to: '/scanner'
         }
       ],
       miniVariant: false,
@@ -115,4 +120,4 @@ export default {
     }
   }
 }
-</script>
+</script>np
