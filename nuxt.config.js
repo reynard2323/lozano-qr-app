@@ -28,6 +28,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/html5-qrcode.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,12 +45,35 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next'
   ],
-  
+   
   auth: {
-    // Options
-  },
-
-
+    redirect: {
+      login: "/auth/signin",  //Redirect user when not connected
+      logout: "/auth/signin", //Redirect user when logout
+      callback: "/auth/callback", // callback URL after login
+      home: "/", // after login redirect
+    },
+    autoFetchUser: false,
+  strategies: {
+    google: {
+      clientId: '280183468761-l1jb6ias2641s8ada0f35pl9tferut2v.apps.googleusercontent.com',
+      scheme: "oauth2",
+      endpoint: {
+        authorization: "https://accounts.google.com/o/oauth2/auth",
+        userInfo: "https://www.googleapis.com/oauth2/v3/userinfo",
+      },
+      token: {
+        property: "access_token",
+        type: "Bearer",
+        maxAge: 1800,
+      },
+      responseType: "token id_token",
+      scope: ["openid", "profile", "email"],
+      redirectUri: "http://localhost:3000/auth/callback",
+      codeChallengeMethod: "",
+    },
+  }
+},
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
