@@ -14,7 +14,6 @@ import { Html5QrcodeScanner } from 'html5-qrcode'
 
 const onScanSuccess = (decodedText, decodedResult) => {
   console.log('✅ QR Code:', decodedText)
-  // You can emit an event or update a store if needed
 }
 
 const onScanFailure = error => {
