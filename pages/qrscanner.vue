@@ -60,7 +60,7 @@ onMounted(() => {
 
 <style scoped>
 #reader {
-  background-color: #5e5e5e;
+  background-color: #774b4b;
   padding: 8px;
   border-radius: 8px;
 }
