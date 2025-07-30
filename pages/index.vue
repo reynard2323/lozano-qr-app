@@ -68,7 +68,7 @@
             nuxt
             to="/inspire"
           >
-            Continue
+            Continue.
           </v-btn>
         </v-card-actions>
       </v-card>
